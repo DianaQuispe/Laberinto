@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Anton|Cinzel|Josefin+Slab|Orbitron');
+body {
+font-family: 'Orbitron', sans-serif;
+
+}
+
+.inicio {
+background-color: green;
+background-image: url(../imagenes/up.png);
+background-size: contain;
+
+}
+.final {
+	background-color: blue; 
+}
+.subguion {
+	color: white;
+
+}
+.asterisco {
+background-color: black;
+
+
+}
+td {
+	width: 30px;
+	height:  30px;
+border: 1px;
+padding: 15px;
+
+
+}
+
+button{
+        font-size:25px;
+		font-family: 'Josefin Slab', serif;
+        font-weight:bold;
+        color:white;
+        background:#696969;
+        border:18px;
+        height:25px;
+        width: 150px;
+     
+
+        }
