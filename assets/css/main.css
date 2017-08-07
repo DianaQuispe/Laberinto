@@ -12,6 +12,7 @@ td{
 }
 
 h1 {
+        font-size: 50px;
         background-image: url(../imagenes/space.jpg);
         width: 100%;
         height: 50px;
@@ -66,7 +67,6 @@ h1 {
         
          background-image: url("../imagenes/up.png");
          position: absolute;
-
         background-size: contain;
         width: 30px;
         height:  30px;
@@ -91,10 +91,9 @@ h1 {
 
 }
 .asterisco {
-        background-color: black;
+background-image: url("../imagenes/rojito.png");
         background-size: contain;
 }
-
 button{
         font-size:25px;
         font-family: 'Josefin Slab', serif;
