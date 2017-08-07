@@ -3,9 +3,17 @@ body {
 font-family: 'Orbitron', sans-serif;
 
 }
+td{
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px;
+ padding: 7px;
+}
+
 .todas {
-        background: blue;
-        background-image: url("../imagenes/up.png");
+       background: blue;  
+       background-image: url("../imagenes/up.png");
         background-repeat:no-repeat; 
         background-size: contain;
 
@@ -13,7 +21,11 @@ font-family: 'Orbitron', sans-serif;
 }
 
 .inicio {
+
+        
         background-image: url(../imagenes/start.png);
+     
+
         position: absolute;
 
         background-size: contain;
@@ -26,35 +38,77 @@ font-family: 'Orbitron', sans-serif;
 
 
 }
+.left {
+        
+        background-image: url("../imagenes/left.png");
+        position: absolute;
+
+        background-size: contain;
+
+
+        background-size: contain;
+        width: 30px;
+        height:  30px;
+    
+}
+.right{
+       background-image: url("../imagenes/rigth.png"); 
+        position: absolute;
+
+        background-size: contain;
+
+
+        background-size: contain;
+        width: 30px;
+        height:  30px;
+}
+.up {
+        
+         background-image: url("../imagenes/up.png");
+         position: absolute;
+
+        background-size: contain;
+        width: 30px;
+        height:  30px;
+      
+}
+.down {
+        
+         background-image: url("../imagenes/down.png");
+         position: absolute;
+
+        background-size: contain; 
+
+
+        background-size: contain;
+        width: 30px;
+        height:  30px;
+      
+}
 
 .subguion {
-	color: white;
+        color: white;
 
 }
 .asterisco {
 background-color: black;
-
+ 
+        background-size: contain;
+      
 
 }
-td {
-        width: 30px;
-        height:  30px;
-        border: 1px;
-        padding: 7px;
-}
+
 /*
  td, tr:nth-child(2) {
         background: blue;
-
 }
 tr, td:nth-child(6) {
         background: green;
-
 }*/
 
 button{
         font-size:25px;
-	font-family: 'Josefin Slab', serif;
+        font-family: 'Josefin Slab', serif;
         font-weight:bold;
         color:white;
         background:#696969;
