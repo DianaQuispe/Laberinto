@@ -1,5 +1,11 @@
 var tablero = document.getElementById("tablero");
 var tabla = document.createElement("table");
+var up = document.getElementById("up");
+var down = document.getElementById("down");
+var left = document.getElementById("left");
+var right = document.getElementById("right");
+var forward = document.getElementById('forward');
+var restart = document.getElementById("restart");
 tabla.setAttribute('id','tabla');
 tabla.setAttribute = ("class", "tablita");
 var x,y;
@@ -7,7 +13,7 @@ var x,y;
 var mapa=[
 "******************",
 "*_________*______*",
-"*_*****_____******",
+"*_****______******",
 "*______***__*__*_*",
 "***_*____*____**_*",
 "*___*____**__*___*",
@@ -21,15 +27,13 @@ for(var i =0; i<mapa.length; i++) {
     var fila = document.createElement("tr");
     for(var j=0; j<mapa[i].length; j++) {
         var celda = document.createElement("td");
-      //    celda.classList.toggle("todas");
-    //  var textoCelda = document.createTextNode(mapa[i][j]);
-     // celda.appendChild(textoCelda);
             if(mapa[i][j] == "o" ) {
                 celda.setAttribute("class", "inicio");
+                celda.setAttribute("id","posi");
                 x=i;
                 y=j;
-                console.log(x);
-                console.log(y);
+                console.log(x +"," + y);
+                
             }else if(mapa[i][j] == "W") {
                 celda.setAttribute("class", "final");
             }else if(mapa[i][j] == "*") {
@@ -38,72 +42,69 @@ for(var i =0; i<mapa.length; i++) {
                 celda.setAttribute("class", "subguion");
             }       
             fila.appendChild(celda);
-
-            //  if(mapa[i][j] == "W") {
-            //  celda.setAttribute("class", "final")
-          //        fila.appendChild(celda);
-            // }
-            
         } 
-            tabla.appendChild(fila);
-            tablero.appendChild(tabla);
-    }
-
-
-
-var tabla2 = document.getElementById("tabla");
-
-var up = document.getElementById("up");
-up.onclick = function() {
-    if (x>1 && mapa[x-1][y] != "*") {
-
-    tabla2.rows[x].cells[y].setAttribute("class", "subguion");
-     x--;
-     tabla2.rows[x].cells[y].setAttribute("class", "up");
+          tabla.appendChild(fila);
+          tablero.appendChild(tabla);
 }
-
-}
-
-var left = document.getElementById("left");
-left.onclick = function() {
-     if (y>1 &&  mapa[x][y-1] != "*") {
-    tabla2.rows[x].cells[y].setAttribute("class", "subguion");
-    y--; 
-    tabla2.rows[x].cells[y].setAttribute("class", "left");
-}
-
-/*
-     for(var i =0; i <celda.length; i++) {
-        celda[i].setAttribute("class", "todas");
-  
-        //  celda[i].style.background = "url('assets/imagenes/up.png')";
+up.onclick = function() { // X  ^ disminuye y Y -> se mantiene
+    if (x >1 && mapa[x-1][y] != "*") {
+     console.log(x +"," + y);;
+         tabla.rows[x] .cells[y].setAttribute("class", "subguion");
+          x--;
+         tabla.rows[x].cells[y].setAttribute("class", "up");
      }
-     alert("sera");*/
 }
 
-var right = document.getElementById("right");
-right.onclick = function() {
+left.onclick = function() { // X ^ se mantiene Y disminuye ->
+console.log(x +"," + y);
+     if (y>1 &&  mapa[x][y-1] != "*") {
+         tabla.rows[x].cells[y].setAttribute("class", "subguion");
+         y--; 
+         tabla.rows[x].cells[y].setAttribute("class", "left");
+      }   
+}
+
+right.onclick = function() { //X  ^ se mantiene y Y aumenta ->
+     console.log(x +"," + y);
      if (y<16 && mapa[x][y+1] != "*") {
-    tabla2.rows[x].cells[y].setAttribute("class", "subguion");
-    y++;
-    tabla2.rows[x].cells[y].setAttribute("class", "right");
-}
+         tabla.rows[x].cells[y].setAttribute("class", "subguion");
+         y++;
+         tabla.rows[x].cells[y].setAttribute("class", "right");
+     }
 }
 
-//18x11
-
-var down = document.getElementById("down");
-down.onclick = function() {
+down.onclick = function() { //X ^ aumenta y Y se mantiene ->
+     console.log(x +"," + y);
      if (x<9 &&  mapa[x+1][y] != "*") {
-    tabla2.rows[x].cells[y].setAttribute("class", "subguion");
-    x++;
-    tabla2.rows[x].cells[y].setAttribute("class", "down");
-
+         tabla.rows[x].cells[y].setAttribute("class", "subguion");
+         x++;
+         tabla.rows[x].cells[y].setAttribute("class", "down");
+     }
 }
 
-}
 
-var forward = document.getElementById('forward');
 forward.onclick = function() {
-     alert("sforwardera");
+     myFunction();  
+   console.log(x +"," + y);
+
+      
+
 }
+function myFunction() {
+
+    setInterval(function(){ 
+     //var posi = document.getElementById("posi");
+    var t = true;
+     if(mapa[x][y] != "*" ) {
+        tabla.rows[x].cells[y].setAttribute("class", "up");
+          x--;   
+     }else if(tabla.rows[x].cells[y+1].setAttribute("class", "subguion")); {
+          tabla.rows[x].cells[y].setAttribute("class", "right"); 
+          y++;    }
+     }, 400);
+} 
+
+restart.onclick = function( ) {
+
+}
+  
