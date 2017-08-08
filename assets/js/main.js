@@ -50,7 +50,7 @@ document.getElementById("up").addEventListener("click", upFunction);
 function upFunction() { // X  ^ disminuye y Y -> se mantiene
  if (x >1 && mapa[x-1][y] != "*") {
      console.log(x +"," + y);;
-         tabla.rows[x] .cells[y].setAttribute("class", "subguion");
+         tabla.rows[x] .cells[y].setAttribute("class", "color");
           x--;
          tabla.rows[x].cells[y].setAttribute("class", "up");
      }
@@ -60,7 +60,7 @@ function upFunction() { // X  ^ disminuye y Y -> se mantiene
 var down = document.getElementById("down").addEventListener("click", downFunction);
 function downFunction() {
      if (x<9 &&  mapa[x+1][y] != "*") {
-         tabla.rows[x].cells[y].setAttribute("class", "subguion");
+         tabla.rows[x] .cells[y].setAttribute("class", "color");
          x++;
          tabla.rows[x].cells[y].setAttribute("class", "down");
      }
@@ -68,7 +68,7 @@ function downFunction() {
 document.getElementById("left").addEventListener("click", leftFunction);
 function leftFunction() {
      if (y>1 &&  mapa[x][y-1] != "*") {
-         tabla.rows[x].cells[y].setAttribute("class", "subguion");
+         tabla.rows[x] .cells[y].setAttribute("class", "color");
          y--; 
          tabla.rows[x].cells[y].setAttribute("class", "left");
       }   
@@ -76,7 +76,7 @@ function leftFunction() {
 document.getElementById("right").addEventListener("click", rightFunction);
 function rightFunction() {
      if (y<16 && mapa[x][y+1] != "*") {
-         tabla.rows[x].cells[y].setAttribute("class", "subguion");
+         tabla.rows[x] .cells[y].setAttribute("class", "color");
          y++;
          tabla.rows[x].cells[y].setAttribute("class", "right");
      }
@@ -98,12 +98,17 @@ forward.onclick  = function() {
      setInterval(function(){myFunction()}, 350);
    
 }
+
+function ganaste() {
+
      //y<16 
+}
 function myFunction() {
      upFunction();
      rightFunction();
     // alert(x + "." + y);
      if(mapa[x-1][y] == "*" && mapa[x-1][y+1] == "*" ) { 
+          
           downFunction();
       } 
 }    

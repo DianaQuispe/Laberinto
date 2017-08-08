@@ -43,6 +43,11 @@ height: 18px;
 
 
 }
+.color {
+
+        background-color: #f2cfe9;
+}
+
 .left {
         
         background-image: url("../imagenes/left.png");
