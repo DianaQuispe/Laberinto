@@ -93,58 +93,94 @@ var tabla2 = document.getElementById("tabla");
 
 up.onclick = function() {
     if (x>1 && mapa[x-1][y] != "*") {
-         tabla2.rows[x]  .cells[y].setAttribute("class", "subguion");
+         tabla.rows[x]  .cells[y].setAttribute("class", "subguion");
           x--;
-         tabla2.rows[x].cells[y].setAttribute("class", "up");
+         tabla.rows[x].cells[y].setAttribute("class", "up");
+         console.log( tabla.rows[x].cells[y]);
      }
 }
 
 left.onclick = function() {
      if (y>1 &&  mapa[x][y-1] != "*") {
-         tabla2.rows[x].cells[y].setAttribute("class", "subguion");
+         tabla.rows[x].cells[y].setAttribute("class", "subguion");
          y--; 
-         tabla2.rows[x].cells[y].setAttribute("class", "left");
+         tabla.rows[x].cells[y].setAttribute("class", "left");
       }   
 }
 
 right.onclick = function() {
      if (y<16 && mapa[x][y+1] != "*") {
-         tabla2.rows[x].cells[y].setAttribute("class", "subguion");
+         tabla.rows[x].cells[y].setAttribute("class", "subguion");
          y++;
-         tabla2.rows[x].cells[y].setAttribute("class", "right");
+         tabla.rows[x].cells[y].setAttribute("class", "right");
      }
 }
 
 down.onclick = function() {
      if (x<9 &&  mapa[x+1][y] != "*") {
-         tabla2.rows[x].cells[y].setAttribute("class", "subguion");
+         tabla.rows[x].cells[y].setAttribute("class", "subguion");
          x++;
-         tabla2.rows[x].cells[y].setAttribute("class", "down");
+         tabla.rows[x].cells[y].setAttribute("class", "down");
      }
 }
-function myFunction() {
-
-    setInterval(function(){ 
-     //var posi = document.getElementById("posi");
-    var t = true;
-     if(mapa[x][y] != "*" ) {
-        tabla.rows[x].cells[y].setAttribute("class", "up");
-          x--;   
-     }else if(tabla.rows[x].cells[y+1].setAttribute("class", "subguion")); {
-          tabla.rows[x].cells[y].setAttribute("class", "right"); 
-          y++;    }
-     }, 400);
-} 
 
 restart.onclick = function( ) {
-
+    if(mapa[x][y] != "*" ) {
+        tabla.rows[x].cells[y].setAttribute("class", "subguion");
+    x=9;
+    y = 1;
+    x--;
+    tabla.rows[x].cells[y].setAttribute("class", "up");
+    console.log(x +"," + y);
+    }
 }
+
   
-
-forward.onmouseup  = function() {
-     if (x>1 && mapa[x-1][y] != "*") {
-         tabla2.rows[x]  .cells[y].setAttribute("class", "subguion");
-          x--;
-        tabla2.rows[x].cells[y].setAttribute("class", "up");
-     }
+forward.onclick  = function() {
+     setInterval(function(){myFunction()}, 400);
+   
 }
+function myFunction() {
+    //   var array = [ 
+    // [x-1,y],[x,y+1],[x+1,y],[x,y-1]
+    // ];
+    // for(var pri =0; pri<array.length; pri++) {
+    //       array = new String(array);
+    //       console.log(array);
+    // }
+    if(mapa[x-1][y] != "*") {
+         if(y<16 && tabla.rows[x-1].cells[y].getAttribute("class", "subguion")){
+        tabla.rows[x].cells[y].setAttribute("class", "subguion");
+        x--;
+        tabla.rows[x].cells[y].setAttribute("class", "up");    
+         } 
+    }else if(mapa[x][y+1] != "*"){
+       if (y<16 && tabla.rows[x].cells[y+1].getAttribute("class", "subguion")) {
+         tabla.rows[x].cells[y].setAttribute("class", "subguion");
+         y++;
+         tabla.rows[x].cells[y].setAttribute("class", "right");
+            } 
+    }else if(mapa[x+1][y] != "*") {
+        if (y>1 &&  tabla.rows[x+1].cells[y].getAttribute("class", "subguion")) {
+         tabla.rows[x].cells[y].setAttribute("class", "subguion");
+         y--; 
+         tabla.rows[x].cells[y].setAttribute("class", "left");
+        }   
+    }else if(mapa[x][y-1] != "*")
+        if (y>1 &&  tabla.rows[x].cells[y-1].getAttribute("class", "subguion")) {
+             tabla.rows[x].cells[y].setAttribute("class", "subguion");
+             y--; 
+             tabla.rows[x].cells[y].setAttribute("class", "left");
+            }   
+ }
+
+    //     if(array[0] == tabla.rows[x].cells[y].setAttribute("class", "subguion")) {
+    //     tabla.rows[x].cells[y].setAttribute("class", "subguion");
+    //     x--
+    //     tabla.rows[x].cells[y].setAttribute("class", "up");
+        
+    // }else 
+    // tabla.rows[x].cells[y].setAttribute("class", "subguion");
+    // y++;
+    //   tabla.rows[x].cells[y].setAttribute("class", "right");
+    // }

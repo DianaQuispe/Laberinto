@@ -4,11 +4,11 @@ body {
         font-family: 'Orbitron', sans-serif;
 }
 td{
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
         padding: 0;
         border: 1px;
-        padding: 7px;
+        padding: 5px;
 }
 
 h1 {
@@ -48,28 +48,25 @@ h1 {
 
 
         background-size: contain;
-        width: 30px;
-        height:  30px;
+        width: 20px;
+        height:  20px;
     
-}
+} 
 .right{
        background-image: url("../imagenes/rigth.png"); 
         position: absolute;
-
         background-size: contain;
-
-
         background-size: contain;
-        width: 30px;
-        height:  30px;
+        width: 20px;
+        height:  20px;
 }
 .up {
         
          background-image: url("../imagenes/up.png");
          position: absolute;
         background-size: contain;
-        width: 30px;
-        height:  30px;
+        width: 20px;
+        height:  20px;
       
 }
 .down {
@@ -81,8 +78,8 @@ h1 {
 
 
         background-size: contain;
-        width: 30px;
-        height:  30px;
+        width: 20px;
+        height:  20px;
       
 }
 
@@ -97,6 +94,7 @@ background-image: url("../imagenes/rojito.png");
      
 
 button{
+       
         font-size:25px;
         font-family: 'Josefin Slab', serif;
         font-weight:bold;
@@ -109,3 +107,25 @@ button:hover {
         background-color: #c37d4e;
         color: white;
 }
+
+#contenedor{ 
+background:#ffe6da; 
+padding:10px; 
+height: 500px;
+} 
+
+#izquierda{ 
+float: left;    
+padding:10px; 
+color:#fff; 
+width:360px; 
+margin:40px; 
+background:rgba(208, 218, 239, 0.47); 
+} 
+
+#derecha{
+float: right;    
+color:#fff; 
+
+background:#fcffbb; 
+} 
