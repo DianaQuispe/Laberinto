@@ -59,11 +59,14 @@ function upFunction() { // X  ^ disminuye y Y -> se mantiene
 
 var down = document.getElementById("down").addEventListener("click", downFunction);
 function downFunction() {
+          console.log(x +"," + y);;
+
      if (x<9 &&  mapa[x+1][y] != "*") {
          tabla.rows[x] .cells[y].setAttribute("class", "color");
          x++;
          tabla.rows[x].cells[y].setAttribute("class", "down");
      }
+     ganaste();
 }
 document.getElementById("left").addEventListener("click", leftFunction);
 function leftFunction() {
@@ -89,9 +92,9 @@ restart.onclick = function( ) {
     y = 1;
     x--;
     tabla.rows[x].cells[y].setAttribute("class", "up");
-            tabla.rows[x].cells[y].setAttribute("class", "subguion");
+    tabla.rows[x].cells[y].setAttribute("class", "subguion");
 
-    console.log(x +"," + y);
+  // console.log(x +"," + y);
     }
 }
 
@@ -102,8 +105,14 @@ forward.onclick  = function() {
 }
 
 function ganaste() {
+     if(x==9 && y==16) {
+alert("ganaste");
 
-     //y<16 
+     }
+    
+
+  // console.log(x +"," + y);
+         //y<16 
 }
 function myFunction() {
      upFunction();

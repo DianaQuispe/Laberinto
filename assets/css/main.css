@@ -129,7 +129,7 @@ width: 100%;
 float: left;                
 padding:40px; 
 color:#fff; 
-width:100px; 
+width:150px; 
 margin:40px; 
 background:rgba(208, 218, 239, 0.47); 
 } 
@@ -139,6 +139,6 @@ float: right;
 color:#fff; 
 padding: 0px;
 background:#fcffbb; 
-width:50%; 
+width:50; 
 margin:80px; 
 } 
