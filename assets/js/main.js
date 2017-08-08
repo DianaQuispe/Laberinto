@@ -1,9 +1,5 @@
 var tablero = document.getElementById("tablero");
 var tabla = document.createElement("table");
-var up = document.getElementById("up");
-var down = document.getElementById("down");
-var left = document.getElementById("left");
-var right = document.getElementById("right");
 var forward = document.getElementById('forward');
 var restart = document.getElementById("restart");
 tabla.setAttribute('id','tabla');
@@ -22,14 +18,17 @@ var mapa=[
 "*_**_*__*****_**_*",
 "*o*__*________**W*",
 "******************"];
-
+var asi = new Array(mapa.length);
+console.log(asi);
 for(var i =0; i<mapa.length; i++) {
     var fila = document.createElement("tr");
     for(var j=0; j<mapa[i].length; j++) {
         var celda = document.createElement("td");
             if(mapa[i][j] == "o" ) {
-                celda.setAttribute("class", "inicio");
-                celda.setAttribute("id","posi");
+                var img = document.createElement("img");
+                img.src = "assets/imagenes/start.png";
+                img.id = "img_uno";
+                celda.appendChild(img);
                 x=i;
                 y=j;
                 console.log(x +"," + y);
@@ -46,8 +45,10 @@ for(var i =0; i<mapa.length; i++) {
           tabla.appendChild(fila);
           tablero.appendChild(tabla);
 }
-up.onclick = function() { // X  ^ disminuye y Y -> se mantiene
-    if (x >1 && mapa[x-1][y] != "*") {
+
+document.getElementById("up").addEventListener("click", upFunction);
+function upFunction() { // X  ^ disminuye y Y -> se mantiene
+ if (x >1 && mapa[x-1][y] != "*") {
      console.log(x +"," + y);;
          tabla.rows[x] .cells[y].setAttribute("class", "subguion");
           x--;
@@ -55,17 +56,25 @@ up.onclick = function() { // X  ^ disminuye y Y -> se mantiene
      }
 }
 
-left.onclick = function() { // X ^ se mantiene Y disminuye ->
-console.log(x +"," + y);
+
+var down = document.getElementById("down").addEventListener("click", downFunction);
+function downFunction() {
+     if (x<9 &&  mapa[x+1][y] != "*") {
+         tabla.rows[x].cells[y].setAttribute("class", "subguion");
+         x++;
+         tabla.rows[x].cells[y].setAttribute("class", "down");
+     }
+}
+document.getElementById("left").addEventListener("click", leftFunction);
+function leftFunction() {
      if (y>1 &&  mapa[x][y-1] != "*") {
          tabla.rows[x].cells[y].setAttribute("class", "subguion");
          y--; 
          tabla.rows[x].cells[y].setAttribute("class", "left");
       }   
 }
-
-right.onclick = function() { //X  ^ se mantiene y Y aumenta ->
-     console.log(x +"," + y);
+document.getElementById("right").addEventListener("click", rightFunction);
+function rightFunction() {
      if (y<16 && mapa[x][y+1] != "*") {
          tabla.rows[x].cells[y].setAttribute("class", "subguion");
          y++;
@@ -73,38 +82,61 @@ right.onclick = function() { //X  ^ se mantiene y Y aumenta ->
      }
 }
 
-down.onclick = function() { //X ^ aumenta y Y se mantiene ->
-     console.log(x +"," + y);
-     if (x<9 &&  mapa[x+1][y] != "*") {
-         tabla.rows[x].cells[y].setAttribute("class", "subguion");
-         x++;
-         tabla.rows[x].cells[y].setAttribute("class", "down");
-     }
-}
-
-
-forward.onclick = function() {
-     myFunction();  
-   console.log(x +"," + y);
-
-      
-
-}
-function myFunction() {
-
-    setInterval(function(){ 
-     //var posi = document.getElementById("posi");
-    var t = true;
-     if(mapa[x][y] != "*" ) {
-        tabla.rows[x].cells[y].setAttribute("class", "up");
-          x--;   
-     }else if(tabla.rows[x].cells[y+1].setAttribute("class", "subguion")); {
-          tabla.rows[x].cells[y].setAttribute("class", "right"); 
-          y++;    }
-     }, 400);
-} 
-
 restart.onclick = function( ) {
-
+    if(mapa[x][y] != "*" ) {
+        tabla.rows[x].cells[y].setAttribute("class", "subguion");
+    x=9;
+    y = 1;
+    x--;
+    tabla.rows[x].cells[y].setAttribute("class", "up");
+    console.log(x +"," + y);
+    }
 }
+
   
+forward.onclick  = function() {
+     setInterval(function(){myFunction()}, 350);
+   
+}
+     //y<16 
+function myFunction() {
+     upFunction();
+     rightFunction();
+    // alert(x + "." + y);
+     if(mapa[x-1][y] == "*" && mapa[x-1][y+1] == "*" ) { 
+          downFunction();
+      } 
+}    
+     //     if(mapa[x+1][y] != "*") {
+     //    if (y>1 &&  tabla.rows[x+1].cells[y].getAttribute("class", "subguion")) {
+     //     tabla.rows[x].cells[y].setAttribute("class", "subguion");
+     //     y--; 
+     //     tabla.rows[x].cells[y].setAttribute("class", "left");
+     //    }   
+     //       }else if(mapa[x][y-1] != "*") { 
+     //    if (y>1 &&  tabla.rows[x].cells[y-1].getAttribute("class", "subguion")) {
+     //         tabla.rows[x].cells[y].setAttribute("class", "subguion");
+     //         y--; 
+     //         tabla.rows[x].cells[y].setAttribute("class", "left");
+     //        }   
+     // }
+
+
+    //   var array = [ 
+    // [x-1,y],[x,y+1],[x+1,y],[x,y-1]
+    // ];
+    // for(var pri =0; pri<array.length; pri++) {
+    //       array = new String(array);
+    //       console.log(array);
+    // }
+    
+    //     if(array[0] == tabla.rows[x].cells[y].setAttribute("class", "subguion")) {
+    //     tabla.rows[x].cells[y].setAttribute("class", "subguion");
+    //     x--
+    //     tabla.rows[x].cells[y].setAttribute("class", "up");
+        
+    // }else 
+    // tabla.rows[x].cells[y].setAttribute("class", "subguion");
+    // y++;
+    //   tabla.rows[x].cells[y].setAttribute("class", "right");
+    // }

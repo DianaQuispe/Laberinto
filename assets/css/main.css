@@ -4,11 +4,11 @@ body {
         font-family: 'Orbitron', sans-serif;
 }
 td{
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
         padding: 0;
         border: 1px;
-        padding: 7px;
+        padding: 5px;
 }
 
 h1 {
@@ -19,6 +19,10 @@ h1 {
         padding: 10px;
 }
 
+#img_uno{
+width: 23px;
+height: 18px;
+}
 .todas {
        background: blue;  
        background-image: url("../imagenes/up.png");
@@ -48,28 +52,25 @@ h1 {
 
 
         background-size: contain;
-        width: 30px;
-        height:  30px;
+        width: 20px;
+        height:  20px;
     
-}
+} 
 .right{
        background-image: url("../imagenes/rigth.png"); 
         position: absolute;
-
         background-size: contain;
-
-
         background-size: contain;
-        width: 30px;
-        height:  30px;
+        width: 20px;
+        height:  20px;
 }
 .up {
         
          background-image: url("../imagenes/up.png");
          position: absolute;
         background-size: contain;
-        width: 30px;
-        height:  30px;
+        width: 20px;
+        height:  20px;
       
 }
 .down {
@@ -81,8 +82,8 @@ h1 {
 
 
         background-size: contain;
-        width: 30px;
-        height:  30px;
+        width: 20px;
+        height:  20px;
       
 }
 
@@ -94,6 +95,8 @@ h1 {
 background-image: url("../imagenes/rojito.png");
         background-size: contain;
 }
+  
+
 button{
         font-size:25px;
         font-family: 'Josefin Slab', serif;
@@ -102,8 +105,32 @@ button{
         background:rgb(112, 189, 167);
         border:18px;
         height:50px;
+        padding: 6px;
+        margin: 7px;
      }
 button:hover {
         background-color: #c37d4e;
         color: white;
 }
+
+#contenedor{ 
+background:#ffe6da; 
+padding:10px; 
+height: 500px;
+} 
+
+#izquierda{ 
+float: left;    
+padding:5px; 
+color:#fff; 
+width:360px; 
+margin:40px; 
+background:rgba(208, 218, 239, 0.47); 
+} 
+
+#derecha{
+float: right;    
+color:#fff; 
+padding: 0px;
+background:#fcffbb; 
+} 
