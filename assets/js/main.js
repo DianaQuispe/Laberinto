@@ -5,7 +5,11 @@ var down = document.getElementById("down");
 var left = document.getElementById("left");
 var right = document.getElementById("right");
 var forward = document.getElementById('forward');
+<<<<<<< HEAD
 var restart = document.getElementById("restart");
+=======
+
+>>>>>>> 5da94bdc83dad95880a6147f69593e83e7633aa6
 tabla.setAttribute('id','tabla');
 tabla.setAttribute = ("class", "tablita");
 var x,y;
@@ -43,6 +47,7 @@ for(var i =0; i<mapa.length; i++) {
             }       
             fila.appendChild(celda);
         } 
+<<<<<<< HEAD
           tabla.appendChild(fila);
           tablero.appendChild(tabla);
 }
@@ -89,6 +94,43 @@ forward.onclick = function() {
 
       
 
+=======
+            tabla.appendChild(fila);
+            tablero.appendChild(tabla);
+}
+var tabla2 = document.getElementById("tabla");
+
+up.onclick = function() {
+    if (x>1 && mapa[x-1][y] != "*") {
+         tabla2.rows[x]  .cells[y].setAttribute("class", "subguion");
+          x--;
+         tabla2.rows[x].cells[y].setAttribute("class", "up");
+     }
+}
+
+left.onclick = function() {
+     if (y>1 &&  mapa[x][y-1] != "*") {
+         tabla2.rows[x].cells[y].setAttribute("class", "subguion");
+         y--; 
+         tabla2.rows[x].cells[y].setAttribute("class", "left");
+      }   
+}
+
+right.onclick = function() {
+     if (y<16 && mapa[x][y+1] != "*") {
+         tabla2.rows[x].cells[y].setAttribute("class", "subguion");
+         y++;
+         tabla2.rows[x].cells[y].setAttribute("class", "right");
+     }
+}
+
+down.onclick = function() {
+     if (x<9 &&  mapa[x+1][y] != "*") {
+         tabla2.rows[x].cells[y].setAttribute("class", "subguion");
+         x++;
+         tabla2.rows[x].cells[y].setAttribute("class", "down");
+     }
+>>>>>>> 5da94bdc83dad95880a6147f69593e83e7633aa6
 }
 function myFunction() {
 
@@ -106,5 +148,15 @@ function myFunction() {
 
 restart.onclick = function( ) {
 
+<<<<<<< HEAD
 }
   
+=======
+forward.onmouseup  = function() {
+     if (x>1 && mapa[x-1][y] != "*") {
+         tabla2.rows[x]  .cells[y].setAttribute("class", "subguion");
+          x--;
+        tabla2.rows[x].cells[y].setAttribute("class", "up");
+     }
+}
+>>>>>>> 5da94bdc83dad95880a6147f69593e83e7633aa6

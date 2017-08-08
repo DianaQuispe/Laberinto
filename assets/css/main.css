@@ -12,7 +12,10 @@ td{
 }
 
 h1 {
+<<<<<<< HEAD
         font-size: 50px;
+=======
+>>>>>>> 5da94bdc83dad95880a6147f69593e83e7633aa6
         background-image: url(../imagenes/space.jpg);
         width: 100%;
         height: 50px;
@@ -91,9 +94,16 @@ h1 {
 
 }
 .asterisco {
+<<<<<<< HEAD
 background-image: url("../imagenes/rojito.png");
         background-size: contain;
 }
+=======
+        background-color: black;
+        background-size: contain;
+}
+
+>>>>>>> 5da94bdc83dad95880a6147f69593e83e7633aa6
 button{
         font-size:25px;
         font-family: 'Josefin Slab', serif;
