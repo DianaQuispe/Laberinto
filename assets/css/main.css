@@ -108,8 +108,8 @@ button{
         font-weight:bold;
         color:#3d1616;
         background:rgb(112, 189, 167);
-        border:18px;
-        height:50px;
+        border:30px;
+        height:60px;
         padding: 6px;
         margin: 7px;
      }
@@ -121,21 +121,24 @@ button:hover {
 #contenedor{ 
 background:#ffe6da; 
 padding:10px; 
-height: 500px;
+height: 100%;
+width: 100%;
 } 
 
 #izquierda{ 
-float: left;    
-padding:5px; 
+float: left;                
+padding:40px; 
 color:#fff; 
-width:360px; 
+width:100px; 
 margin:40px; 
 background:rgba(208, 218, 239, 0.47); 
 } 
 
 #derecha{
-float: right;    
+float: right;
 color:#fff; 
 padding: 0px;
 background:#fcffbb; 
+width:50%; 
+margin:80px; 
 } 

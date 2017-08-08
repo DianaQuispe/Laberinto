@@ -89,6 +89,8 @@ restart.onclick = function( ) {
     y = 1;
     x--;
     tabla.rows[x].cells[y].setAttribute("class", "up");
+            tabla.rows[x].cells[y].setAttribute("class", "subguion");
+
     console.log(x +"," + y);
     }
 }
@@ -108,7 +110,7 @@ function myFunction() {
      rightFunction();
     // alert(x + "." + y);
      if(mapa[x-1][y] == "*" && mapa[x-1][y+1] == "*" ) { 
-          
+
           downFunction();
       } 
 }    
