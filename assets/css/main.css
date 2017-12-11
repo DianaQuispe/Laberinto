@@ -108,10 +108,10 @@ button{
         font-weight:bold;
         color:#3d1616;
         background:rgb(112, 189, 167);
-        border:30px;
-        height:60px;
-        padding: 6px;
-        margin: 7px;
+        border:10px;
+        height:40px;
+        padding: 0px 5px;
+        margin: 7px !important;
      }
 button:hover {
         background-color: #c37d4e;
@@ -120,9 +120,12 @@ button:hover {
 
 #contenedor{ 
 background:#ffe6da; 
-padding:10px; 
+position: relative;
 height: 100%;
-width: 100%;
+left: 350px;
+right: auto;
+width: 350px;
+/* margin:  0 450px; */
 } 
 
 #izquierda{ 
